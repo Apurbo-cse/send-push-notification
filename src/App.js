@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import addNotification from "react-push-notification";
+import icon from "./assets/images/icon.jpg";
 function App() {
+  const clickToNotify = () => {
+    addNotification({
+      title: "Code with Apurbo",
+      message: "Visit my Facebook Page",
+      duration: 4000,
+      icon: icon,
+      native: true,
+    });
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <button onClick={clickToNotify} style={{ margin: "100px" }}>
+        Click to Notify
+      </button>
+    </>
   );
 }
 
